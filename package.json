@@ -1,0 +1,49 @@
+{
+  "name": "recruitment-agent-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only --require tsconfig-paths/register src/server.ts",
+    "start": "NODE_ENV=production node dist/server.js",
+    "build": "tsc && tsc-alias && pnpm run copy-json",
+    "copy-json": "mkdir -p dist/data && cp src/data/protected-routes.json dist/data/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.775.0",
+    "@types/cookie-parser": "^1.4.8",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "1.4.5-lts.2",
+    "pg": "^8.14.1",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.13.13",
+    "@types/pg": "^8.11.11",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.13",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "bcrypt"
+    ]
+  }
+}

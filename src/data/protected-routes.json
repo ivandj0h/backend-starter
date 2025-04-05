@@ -1,0 +1,10 @@
+{
+  "protectedRoutes": [
+    "/profile",
+    "/update-password",
+    "/users/",
+    "/dashboard",
+    "/admin",
+    "companies"
+  ]
+}
